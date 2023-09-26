@@ -2,24 +2,26 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Triangulo extends Figura implements Formas_Control {
+public class Retangulo extends Figura implements Formas_Control {
+
+
     private final String nome;
     private float base = 0, altura = 0;
 
-    Triangulo(){
+    Retangulo(){
         //super();
-        this.nome = Nome_Fig.TRIANGULO.toString();
+        this.nome = Nome_Fig.RETANGULO.toString();
         this.setLados();
         this.setArea((this.altura*this.base)/2);
-      
+
     }
 
     public void setLados(){
         Scanner scan = new Scanner(System.in);
-        System.out.println("\n\t Digite a base do triangulo: \t");
+        System.out.println("\n\t Digite a base do retangulo: \t");
         this.setBase(scan.nextFloat());
 
-        System.out.println("\n\t Digite a altura do triangulo: \t");
+        System.out.println("\n\t Digite a altura do retangulo: \t");
         this.setAltura(scan.nextFloat());
 
         List<Float> lados = new ArrayList<>();
@@ -29,30 +31,31 @@ public class Triangulo extends Figura implements Formas_Control {
         super.setLados(lados);
     }
     public void setBase(float base) {
-      this.base = base;
-}
+        this.base = base;
+    }
     public float getBase() {
-    return base;
-}
+        return base;
+    }
 
     public void setAltura(float altura){
-    this.altura = altura;
-  }
+        this.altura = altura;
+    }
     public float getAltura() {
-    return altura;
-}
+        return altura;
+    }
 
     @Override
-    public void setArea(Float area){
+    public void setArea(Float area) {
         super.setArea(area);
     }
 
     @Override
     public void getInfo(){
-        System.out.println("\t INFOS de "+this.nome+":\n");
+        System.out.println("\n\t INFOS de "+this.nome+":\n");
         System.out.println("\t\t base = "+this.base);
         System.out.println("\t\t altura = "+this.altura);
         System.out.println("\t\t AREA = "+super.getArea());
 
     }
+
 }
